@@ -1,0 +1,63 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "dhani-adf"
+		},
+		"BlobStorage_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'BlobStorage'"
+		},
+		"schedule_properties_pipeline1_parameters_FileName": {
+			"type": "string",
+			"defaultValue": "@triggerBody().FileName"
+		},
+		"schedule_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/1ce31932-de56-4676-acd6-c45850081151/resourceGroups/Dev/providers/Microsoft.Storage/storageAccounts/dhaniblob"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "dhani-adf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"BlobStorage_connectionString": {
+						"value": "[parameters('BlobStorage_connectionString')]"
+					},
+					"schedule_properties_pipeline1_parameters_FileName": {
+						"value": "[parameters('schedule_properties_pipeline1_parameters_FileName')]"
+					},
+					"schedule_properties_typeProperties_scope": {
+						"value": "[parameters('schedule_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

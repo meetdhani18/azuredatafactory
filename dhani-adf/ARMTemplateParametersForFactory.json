@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dhani-adf"
+		},
+		"BlobStorage_connectionString": {
+			"value": ""
+		},
+		"schedule_properties_pipeline1_parameters_FileName": {
+			"value": "@triggerBody().FileName"
+		},
+		"schedule_properties_typeProperties_scope": {
+			"value": "/subscriptions/1ce31932-de56-4676-acd6-c45850081151/resourceGroups/Dev/providers/Microsoft.Storage/storageAccounts/dhaniblob"
+		}
+	}
+}
