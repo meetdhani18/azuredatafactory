@@ -56,7 +56,7 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"FileName": {
-								"value": "@pipeline().parameters.FileName",
+								"value": "@replace(pipeline().parameters.FileName,'.csv','')",
 								"type": "Expression"
 							}
 						}
