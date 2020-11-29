@@ -14,6 +14,9 @@
 		"schedule_properties_pipeline1_parameters_FileName": {
 			"value": "@triggerBody().FileName"
 		},
+		"schedule_properties_BlobtoSQL_parameters_FileName": {
+			"value": "@triggerBody().FileName"
+		},
 		"schedule_properties_typeProperties_scope": {
 			"value": "/subscriptions/1ce31932-de56-4676-acd6-c45850081151/resourceGroups/Dev/providers/Microsoft.Storage/storageAccounts/dhaniblob"
 		}
