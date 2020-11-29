@@ -12,6 +12,15 @@
 				"parameters": {
 					"FileName": "@triggerBody().FileName"
 				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "BlobtoSQL",
+					"type": "PipelineReference"
+				},
+				"parameters": {
+					"FileName": "@triggerBody().FileName"
+				}
 			}
 		],
 		"type": "BlobEventsTrigger",
