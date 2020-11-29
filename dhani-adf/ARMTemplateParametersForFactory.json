@@ -5,6 +5,9 @@
 		"factoryName": {
 			"value": "dhani-adf"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"value": ""
+		},
 		"BlobStorage_connectionString": {
 			"value": ""
 		},

@@ -7,6 +7,10 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "dhani-adf"
 		},
+		"AzureSqlDatabase_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase'"
+		},
 		"BlobStorage_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'BlobStorage'"
@@ -45,6 +49,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"AzureSqlDatabase_connectionString": {
+						"value": "[parameters('AzureSqlDatabase_connectionString')]"
 					},
 					"BlobStorage_connectionString": {
 						"value": "[parameters('BlobStorage_connectionString')]"
