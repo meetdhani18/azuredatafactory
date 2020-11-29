@@ -169,7 +169,7 @@
 							"referenceName": "BlobStorage",
 							"type": "LinkedServiceReference"
 						},
-						"path": "input"
+						"path": "logging"
 					},
 					"enableLogging": true,
 					"storeSettings": {
